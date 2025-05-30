@@ -1,0 +1,14 @@
+Prompt for just name generation (RGB): genrate just name (no other words) for this color: <R>, <G>, <B>
+Prompt for just name generation (hex): genrate just name (no other words) for this color: #<hex color here>
+
+Online test runner of models:
+https://huggingface.co/spaces/expandme-tech/SmallZOO-GGUFee-Llama
+
+MODELS:
+afrideva/zephyr-smol_llama-100m-dpo-full-GGUF (101M params)
+tensorblock/Pretrain-Qwen-200M-GGUF (203M params)
+nroggendorff/smallama-it (324M params)
+KingNish/Qwen2.5-0.5b-Test-ft (494M params)
+
+
+https://huggingface.co/afrideva/zephyr-smol_llama-100m-dpo-full-GGUF/resolve/main/https://huggingface.co/afrideva/zephyr-smol_llama-100m-dpo-full.gguf

@@ -24,6 +24,10 @@ __Example:__
 2. Scroll a little
 3. You got it
 
+**Debug Info Output**
+Copy debug info from About page here:
+
+
 **Expected behavior**
 A clear and concise description of what you expected to happen.
 

@@ -10,12 +10,14 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { laptopOutline, informationCircleOutline, settingsOutline } from 'ionicons/icons';
+import { laptopOutline, informationCircleOutline, settingsOutline, bookmarkOutline } from 'ionicons/icons';
 
 
 import MainApp from './pages/MainApp/MainApp.tsx'
 import About from './pages/About/About.tsx'
 import Settings from './pages/Settings/Settings.tsx'
+import Legal from './pages/Legal/Legal.tsx';
+import Favorites from './pages/Favorites/Favorites.tsx';
 
 import '@ionic/react/css/core.css';
 import '@ionic/react/css/normalize.css';
@@ -57,6 +59,12 @@ const App: React.FC = () => (
           <Route exact path="/app">
             <MainApp />
           </Route>
+          <Route exact path="/legal">
+            <Legal />
+          </Route>
+          <Route exact path="/favorites">
+            <Favorites />
+          </Route>
           <Route exact path="/">
             <Redirect to="/app" />
           </Route>
@@ -65,6 +73,10 @@ const App: React.FC = () => (
           <IonTabButton tab="app" href="/app">
             <IonIcon aria-hidden="true" icon={laptopOutline} />
             <IonLabel>ColorTok</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="favorites" href="/favorites">
+            <IonIcon aria-hidden="true" icon={bookmarkOutline} />
+            <IonLabel>Favorites</IonLabel>
           </IonTabButton>
           <IonTabButton tab="settings" href="/settings">
             <IonIcon aria-hidden="true" icon={settingsOutline} />

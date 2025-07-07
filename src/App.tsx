@@ -43,7 +43,7 @@ import '@ionic/react/css/display.css';
 
 import './theme/variables.css';
 
-setupIonicReact();
+setupIonicReact()
 
 const App: React.FC = () => (
   <IonApp>

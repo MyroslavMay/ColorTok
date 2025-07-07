@@ -31,6 +31,9 @@ const Legal: React.FC = () => {
           Copyright 2025,{" "}
           <a href="https://github.com/MyroslavMay">MyroslavMay</a>
           <br />
+          Colorset: {" "}
+          <a href="https://github.com/meodai/color-names">color-names</a>
+          <br />
           <br />
           <h1>Libraries Used</h1>
           <h2>Capacitor plugins for native functionality</h2>

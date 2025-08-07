@@ -10,7 +10,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { laptopOutline, informationCircleOutline, settingsOutline, bookmarkOutline } from 'ionicons/icons';
+import { informationCircleOutline, settingsOutline, bookmarkOutline, albumsOutline } from 'ionicons/icons';
 
 
 import MainApp from './pages/MainApp/MainApp.tsx'
@@ -71,8 +71,8 @@ const App: React.FC = () => (
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
           <IonTabButton tab="app" href="/app">
-            <IonIcon aria-hidden="true" icon={laptopOutline} />
-            <IonLabel>ColorTok</IonLabel>
+            <IonIcon aria-hidden="true" icon={albumsOutline} />
+            <IonLabel>Feed</IonLabel>
           </IonTabButton>
           <IonTabButton tab="favorites" href="/favorites">
             <IonIcon aria-hidden="true" icon={bookmarkOutline} />

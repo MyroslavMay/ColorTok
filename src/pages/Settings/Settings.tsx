@@ -43,12 +43,31 @@ const Settings: React.FC = () => {
     }
   };
 
-  const toggleDarkMode = () => {
+  // TODO: fisnish this
+  const selectWidgets = (widgetsType: "md" | "ios") => {
     const body = document.body;
-    body.classList.toggle("dark");
-    setIsDark(!isDark);
-  };
+    body.classList.remove("dark", "light");
 
+    switch (themeType) {
+      case "dark":
+        body.classList.add("dark");
+        setIsDark(true);
+        break;
+      case "light":
+        body.classList.add("light");
+        setIsDark(false);
+        break;
+      case "sys":
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        if (prefersDark) {
+          body.classList.add("dark");
+          setIsDark(true);
+        }
+        break;
+    }
+  };
   return (
     <IonPage>
       <IonHeader>
@@ -64,17 +83,29 @@ const Settings: React.FC = () => {
         </IonHeader>
         {/* actual content lives here */}
         <div className="settings">
-          <h1>Your Settings</h1>
-          <IonItem>
+          <IonTitle>Your Settings</IonTitle>
+          <IonItem style={{ marginTop: "5vh" }}>
             <IonSelect
               label="Theme"
-              interface="action-sheet"
+              interface="popover"
               onIonChange={(e) => selectTheme(e.detail.value)}
               value={isDark ? "dark" : "light"}
             >
               <IonSelectOption value="sys">System</IonSelectOption>
               <IonSelectOption value="dark">Dark</IonSelectOption>
               <IonSelectOption value="light">Light</IonSelectOption>
+            </IonSelect>
+          </IonItem>
+
+          <IonItem style={{ marginTop: "5vh" }}>
+            <IonSelect
+              label="Widgets"
+              interface="popover"
+              onIonChange={(e) => selectWidgets(e.detail.value)}
+              value={isMat ? "md" : "ios"}
+            >
+              <IonSelectOption value="md">Material (Android)</IonSelectOption>
+              <IonSelectOption value="ios">Cupertino (iOS)</IonSelectOption>
             </IonSelect>
           </IonItem>
         </div>

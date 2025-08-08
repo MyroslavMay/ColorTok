@@ -27,7 +27,7 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
-.share-btn {
+.side-btn {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -37,13 +37,13 @@
     cursor: pointer;
 }
 
-.share-btn img {
+.side-btn img {
     width: 24px;
     height: 24px;
     opacity: 0.8;
     transition: opacity 0.2s;
 }
 
-.share-btn:hover img {
+.side-btn:hover img {
     opacity: 1;
 }

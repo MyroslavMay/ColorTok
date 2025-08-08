@@ -64,6 +64,7 @@ const Settings: React.FC = () => {
         </IonHeader>
         {/* actual content lives here */}
         <div className="settings">
+          <h1>Your Settings</h1>
           <IonItem>
             <IonSelect
               label="Theme"

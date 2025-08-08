@@ -1,13 +1,14 @@
-import { useIonToast } from "@ionic/react";
+import { IonIcon, useIonToast } from "@ionic/react";
 import { Share } from '@capacitor/share'
 import { Clipboard } from "@capacitor/clipboard";
-import React, { CanvasHTMLAttributes, useCallback, useRef, useState } from "react";
+import React, { useCallback, useRef } from "react";
 import { closest } from 'color-2-name'
 import newColorSet from '../newColorSet.ts'
 import { Directory, Encoding, Filesystem } from '@capacitor/filesystem'
 import html2canvas from 'html2canvas'
 import './ColorCard.css'
 import translate from "../translator.ts";
+import { shareOutline } from "ionicons/icons";
 
 interface ColorCardProps {
   hexColor: string;
@@ -45,10 +46,6 @@ async function shareColor(toastHook: any, colorName: string, hexColor: string) {
 }
 
 const ColorCardComponent = (props: ColorCardProps) => {
-
-  const [width, setWidth] = useState(600)
-  const [height, setHeight] = useState(400)
-  const [text, setText] = useState("")
   const prewiewRef = useRef(null)
 
   const [present] = useIonToast();
@@ -105,6 +102,9 @@ const ColorCardComponent = (props: ColorCardProps) => {
         <img src="assets/share_64.png" alt="Share icon" />
       </button> */}
       {/* <canvas id="myCanvas" width="500" height="500" style={{ border: "1px solid #fff" }}></canvas> */}
+      <button className="share-btn">
+        <IonIcon icon={shareOutline} />
+      </button>
     </div>
   );
 };

@@ -27,23 +27,33 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
-.side-btn {
+.side-btns {
+    margin-top: 5vh;
     position: absolute;
     top: 16px;
     right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+}
+
+.side-btn {
     background: none;
     border: none;
     padding: 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-.side-btn img {
+.side-btn ion-icon {
     width: 24px;
     height: 24px;
     opacity: 0.8;
     transition: opacity 0.2s;
 }
 
-.side-btn:hover img {
+.side-btn:hover ion-icon {
     opacity: 1;
 }

@@ -8,7 +8,7 @@ import { Directory, Encoding, Filesystem } from '@capacitor/filesystem'
 import html2canvas from 'html2canvas'
 import './ColorCard.css'
 import translate from "../translator.ts";
-import { shareOutline } from "ionicons/icons";
+import { shareOutline, expandOutline } from "ionicons/icons";
 
 interface ColorCardProps {
   hexColor: string;
@@ -88,12 +88,16 @@ const ColorCardComponent = (props: ColorCardProps) => {
       <p>
         HEX:
         <br />
-        <button onClick={handleCopyHex} className="copy-btn">{props.hexColor}</button>
+        <button onClick={handleCopyHex} className="copy-btn">
+          {props.hexColor}
+        </button>
       </p>
       <p>
         RGB:
         <br />
-        <button onClick={handleCopyRGB} className="copy-btn">{props.RGBcolor.join(", ")}</button>
+        <button onClick={handleCopyRGB} className="copy-btn">
+          {props.RGBcolor.join(", ")}
+        </button>
       </p>
       {/* TODO: this is for v2 release */}
       {/* <button
@@ -102,9 +106,14 @@ const ColorCardComponent = (props: ColorCardProps) => {
         <img src="assets/share_64.png" alt="Share icon" />
       </button> */}
       {/* <canvas id="myCanvas" width="500" height="500" style={{ border: "1px solid #fff" }}></canvas> */}
-      <button className="share-btn">
-        <IonIcon icon={shareOutline} />
-      </button>
+      <div className="side-btns">
+        <button className="side-btn">
+          <IonIcon icon={shareOutline} />
+        </button>
+        <button className="side-btn">
+          <IonIcon icon={expandOutline} />
+        </button>
+      </div>
     </div>
   );
 };

@@ -74,6 +74,7 @@ const ColorCardComponent = (props: ColorCardProps) => {
     })
   }
 
+  // @ts-ignore
   const colorName = closest(`#${props.hexColor}`, newColorSet).name
   // const translated = translate(colorName, 'it')
 

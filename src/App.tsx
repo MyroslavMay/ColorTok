@@ -10,6 +10,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { useIonRouter } from '@ionic/react';
 import { informationCircleOutline, settingsOutline, bookmarkOutline, albumsOutline } from 'ionicons/icons';
 
 
@@ -74,7 +75,7 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={albumsOutline} />
             <IonLabel>Feed</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="favorites" href="/favorites">
+          <IonTabButton tab="favorites">
             <IonIcon aria-hidden="true" icon={bookmarkOutline} />
             <IonLabel>Favorites</IonLabel>
           </IonTabButton>

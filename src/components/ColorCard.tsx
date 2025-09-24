@@ -74,6 +74,10 @@ const ColorCardComponent = (props: ColorCardProps) => {
     })
   }
 
+  const fullscreen = () => {
+    
+  }
+
   // @ts-ignore
   const colorName = closest(`#${props.hexColor}`, newColorSet).name
   // const translated = translate(colorName, 'it')
@@ -111,7 +115,7 @@ const ColorCardComponent = (props: ColorCardProps) => {
         <button className="side-btn">
           <IonIcon icon={shareOutline} />
         </button>
-        <button className="side-btn">
+        <button className="side-btn" onClick={fullscreen}>
           <IonIcon icon={expandOutline} />
         </button>
       </div>

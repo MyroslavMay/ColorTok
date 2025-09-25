@@ -9,6 +9,8 @@ import html2canvas from 'html2canvas'
 import './ColorCard.css'
 import translate from "../translator.ts";
 import { shareOutline, expandOutline } from "ionicons/icons";
+import { FullScreen, useFullScreenHandle } from "react-full-screen";
+import FullscreenColorCard from "./FullscreenColorCard.tsx"
 
 interface ColorCardProps {
   hexColor: string;
@@ -46,6 +48,8 @@ async function shareColor(toastHook: any, colorName: string, hexColor: string) {
 }
 
 const ColorCardComponent = (props: ColorCardProps) => {
+  const handle = useFullScreenHandle()
+
   const prewiewRef = useRef(null)
 
   const [present] = useIonToast();
@@ -73,11 +77,6 @@ const ColorCardComponent = (props: ColorCardProps) => {
       directory: Directory.Cache
     })
   }
-
-  const fullscreen = () => {
-    
-  }
-
   // @ts-ignore
   const colorName = closest(`#${props.hexColor}`, newColorSet).name
   // const translated = translate(colorName, 'it')
@@ -115,10 +114,13 @@ const ColorCardComponent = (props: ColorCardProps) => {
         <button className="side-btn">
           <IonIcon icon={shareOutline} />
         </button>
-        <button className="side-btn" onClick={fullscreen}>
+        <button className="side-btn" onClick={handle.enter}>
           <IonIcon icon={expandOutline} />
         </button>
       </div>
+      <FullScreen handle={handle}>
+        <FullscreenColorCard hexColor={props.hexColor} />
+      </FullScreen>
     </div>
   );
 };

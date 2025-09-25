@@ -2,7 +2,6 @@ import {
   IonContent,
   IonInfiniteScroll,
   IonInfiniteScrollContent,
-  IonLabel,
   IonPage,
   IonHeader,
   IonToolbar,

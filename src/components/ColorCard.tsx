@@ -8,7 +8,7 @@ import { Directory, Encoding, Filesystem } from '@capacitor/filesystem'
 import html2canvas from 'html2canvas'
 import './ColorCard.css'
 import translate from "../translator.ts";
-import { shareOutline, expandOutline } from "ionicons/icons";
+import { shareOutline, expandOutline, downloadOutline } from "ionicons/icons";
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
 import FullscreenColorCard from "./FullscreenColorCard.tsx"
 
@@ -116,6 +116,9 @@ const ColorCardComponent = (props: ColorCardProps) => {
         </button>
         <button className="side-btn" onClick={handle.enter}>
           <IonIcon icon={expandOutline} />
+        </button>
+        <button className="side-btn">
+          <IonIcon icon={downloadOutline} />
         </button>
       </div>
       <FullScreen handle={handle}>

@@ -75,7 +75,8 @@ const App: React.FC = () => (
             <IonIcon aria-hidden="true" icon={albumsOutline} />
             <IonLabel>Feed</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="favorites">
+          {/* Hack to get favoritess working */}
+          <IonTabButton tab="favorites" onClick={() => window.location.href = "/favorites"}>
             <IonIcon aria-hidden="true" icon={bookmarkOutline} />
             <IonLabel>Favorites</IonLabel>
           </IonTabButton>

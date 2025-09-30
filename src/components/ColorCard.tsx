@@ -82,49 +82,49 @@ const ColorCardComponent = (props: ColorCardProps) => {
   // const translated = translate(colorName, 'it')
 
   return (
-    <div
-      className="color-card"
-      style={{
-        backgroundColor: `#${props.hexColor}`, // inserting it here, not in css, because it needs to be dynamic, it css this isn't good enough :)
-      }}
-    >
-      <strong>{colorName}</strong>
-      <p>
-        HEX:
-        <br />
-        <button onClick={handleCopyHex} className="copy-btn">
-          {props.hexColor}
-        </button>
-      </p>
-      <p>
-        RGB:
-        <br />
-        <button onClick={handleCopyRGB} className="copy-btn">
-          {props.RGBcolor.join(", ")}
-        </button>
-      </p>
-      {/* TODO: this is for v2 release */}
-      {/* <button
+      <div
+        className="color-card"
+        style={{
+          backgroundColor: `#${props.hexColor}`, // inserting it here, not in css, because it needs to be dynamic, it css this isn't good enough :)
+        }}
+      >
+        <strong>{colorName}</strong>
+        <p>
+          HEX:
+          <br />
+          <button onClick={handleCopyHex} className="copy-btn">
+            {props.hexColor}
+          </button>
+        </p>
+        <p>
+          RGB:
+          <br />
+          <button onClick={handleCopyRGB} className="copy-btn">
+            {props.RGBcolor.join(", ")}
+          </button>
+        </p>
+        {/* TODO: this is for v2 release */}
+        {/* <button
         onClick={() => shareColor(present, colorName, props.hexColor)}
         className="share-btn">
         <img src="assets/share_64.png" alt="Share icon" />
       </button> */}
-      {/* <canvas id="myCanvas" width="500" height="500" style={{ border: "1px solid #fff" }}></canvas> */}
-      <div className="side-btns">
-        <button className="side-btn">
-          <IonIcon icon={shareOutline} />
-        </button>
-        <button className="side-btn" onClick={handle.enter}>
-          <IonIcon icon={expandOutline} />
-        </button>
-        <button className="side-btn">
-          <IonIcon icon={downloadOutline} />
-        </button>
+        {/* <canvas id="myCanvas" width="500" height="500" style={{ border: "1px solid #fff" }}></canvas> */}
+        <div className="side-btns">
+          <button className="side-btn">
+            <IonIcon icon={shareOutline} />
+          </button>
+          <button className="side-btn" onClick={handle.enter}>
+            <IonIcon icon={expandOutline} />
+          </button>
+          <button className="side-btn">
+            <IonIcon icon={downloadOutline} />
+          </button>
+        </div>
+        <FullScreen handle={handle}>
+          <FullscreenColorCard hexColor={props.hexColor} />
+        </FullScreen>
       </div>
-      <FullScreen handle={handle}>
-        <FullscreenColorCard hexColor={props.hexColor} />
-      </FullScreen>
-    </div>
   );
 };
 

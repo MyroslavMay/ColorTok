@@ -1,0 +1,15 @@
+.favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.favs-cards {
+    display: grid;
+
+}
+
+.fav-card {
+    /* TODO: finish this */
+}

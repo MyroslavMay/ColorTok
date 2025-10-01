@@ -102,7 +102,8 @@ const Settings: React.FC = () => {
               label="Widgets"
               interface="popover"
               onIonChange={(e) => selectWidgets(e.detail.value)}
-              value={isMat ? "md" : "ios"}
+              // value={isMat ? "md" : "ios"}
+              value={"md"}
             >
               <IonSelectOption value="md">Material (Android)</IonSelectOption>
               <IonSelectOption value="ios">Cupertino (iOS)</IonSelectOption>

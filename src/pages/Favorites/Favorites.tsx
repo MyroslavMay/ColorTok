@@ -4,6 +4,15 @@ import React from "react"
 import "./Favorites.css"
 
 const Favorites: React.FC = () => {
+
+  const cards = Array.from({ length: 0 }, (_, i) => i);
+
+  const randomSpans = () =>
+    ({
+      colSpan: Math.random() > 0.7 ? 2 : 1,
+      rowSpan: Math.ceil(Math.random() * 3),
+    });
+
   return (
     <IonPage>
       <IonHeader>
@@ -21,7 +30,15 @@ const Favorites: React.FC = () => {
         <div className="favorites">
           <IonTitle>Your Favorites</IonTitle>
           <div className="favs-cards">
-            <div className="fav-card"></div>
+            {/* <div className="fav-card">1</div>
+            <div className="fav-card">1</div>
+            <div className="fav-card">1</div>
+            <div className="fav-card">1</div>
+            <div className="fav-card">1</div>
+            <div className="fav-card">1</div> */}
+            {cards.length >= 1 ? <p>Cards</p> : (
+              <p>No favorites</p>
+            )}
           </div>
         </div>
       </IonContent>

@@ -6,10 +6,13 @@
 }
 
 .favs-cards {
-    display: grid;
-
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-auto-rows: 100px; /* base size */
+  gap: 10px;
 }
 
 .fav-card {
-    /* TODO: finish this */
+    background: lightcoral;
+    border-radius: 12px;
 }

@@ -16,3 +16,11 @@
     background: lightcoral;
     border-radius: 12px;
 }
+
+.no-favs {
+    /* TODO: finish this :) */
+    /* position: absolute; */
+    margin: 0px;
+    font-size: 1.5rem;
+    color: gray;
+}

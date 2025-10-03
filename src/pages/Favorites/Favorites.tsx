@@ -1,5 +1,6 @@
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from "@ionic/react"
+import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from "@ionic/react"
 import React from "react"
+import { helpCircleOutline } from "ionicons/icons";
 
 import "./Favorites.css"
 
@@ -36,8 +37,14 @@ const Favorites: React.FC = () => {
             <div className="fav-card">1</div>
             <div className="fav-card">1</div>
             <div className="fav-card">1</div> */}
-            {cards.length >= 1 ? <p>Cards</p> : (
-              <p>No favorites</p>
+            {cards.length >= 1 ? <p></p> : (
+              <div className="no-favs">
+                <IonIcon icon={helpCircleOutline} size="large" />
+                <h1>There is nothing yet!</h1>
+                <br/>
+                <br/>
+                <p>Currently, you don't have any favorites!</p>
+              </div>
             )}
           </div>
         </div>

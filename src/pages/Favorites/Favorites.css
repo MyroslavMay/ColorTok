@@ -18,9 +18,10 @@
 }
 
 .no-favs {
-    /* TODO: finish this :) */
-    /* position: absolute; */
+    position: absolute;
     margin: 0px;
     font-size: 1.5rem;
     color: gray;
+    text-align: center;
+    width: 100%;
 }

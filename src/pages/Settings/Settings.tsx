@@ -10,6 +10,7 @@ import {
   IonToggle,
 } from "@ionic/react";
 import { useState } from "react";
+import { Preferences } from "@capacitor/preferences";
 
 import "./Settings.css";
 
@@ -18,7 +19,7 @@ const Settings: React.FC = () => {
     document.body.classList.contains("dark")
   );
 
-  const selectTheme = (themeType: "sys" | "dark" | "light") => {
+  const selectTheme = async (themeType: "sys" | "dark" | "light") => {
     const body = document.body;
     body.classList.remove("dark", "light");
 
@@ -26,10 +27,12 @@ const Settings: React.FC = () => {
       case "dark":
         body.classList.add("dark");
         setIsDark(true);
+        await Preferences.set({ key: "theme", value: "dark" })
         break;
       case "light":
         body.classList.add("light");
         setIsDark(false);
+        await Preferences.set({ key: "theme", value: "light" })
         break;
       case "sys":
         const prefersDark = window.matchMedia(
@@ -37,6 +40,7 @@ const Settings: React.FC = () => {
         ).matches;
         if (prefersDark) {
           body.classList.add("dark");
+          await Preferences.set({ key: "theme", value: "dark" })
           setIsDark(true);
         }
         break;

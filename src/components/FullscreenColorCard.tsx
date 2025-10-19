@@ -8,8 +8,10 @@ interface FullscreenColorCardProps {
 }
 
 const ColorCardComponent = (props: FullscreenColorCardProps) => {
-  // @ts-ignore
-  const colorName = closest(`#${props.hexColor}`, newColorSet).name
+  document.addEventListener('ionBackButton', () => {
+    document.exitFullscreen();
+  })
+
 
   return (
     <div

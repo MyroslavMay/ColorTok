@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">ColorTok</string>
     <string name="title_activity_main">ColorTok</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="package_name">io.github.MyroslavMay.ColorTok</string>
+    <string name="custom_url_scheme">io.github.MyroslavMay.ColorTok</string>
 </resources>

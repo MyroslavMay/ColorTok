@@ -6,11 +6,14 @@ import {
   IonHeader,
   IonToolbar,
   IonTitle,
+  useIonRouter
 } from "@ionic/react";
 import "./MainApp.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper/modules";
 import React, { useState, useEffect } from "react";
+
+import { Toast } from "@capacitor/toast";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -18,8 +21,22 @@ import "@ionic/react/css/ionic-swiper.css";
 import ColorCard from "../../components/ColorCard.tsx";
 
 import { generateNumData } from "../../dataGenerator.ts";
+import { App } from "@capacitor/app";
 
 const MainApp = () => {
+
+  const ionRouter = useIonRouter()
+  const [exitCount, setExitCount] = useState(2)
+
+  document.addEventListener('ionBackButton', (event) => {
+    // @ts-ignore, because typescript sucks sometimes :)
+    event.detail.register(-1, async () => {
+      if (!ionRouter.canGoBack()) {
+        App.exitApp()
+      }
+    })
+  })
+
   const [items, setItems] = useState<React.ReactNode[]>([]);
 
   const generateItems = () => {
